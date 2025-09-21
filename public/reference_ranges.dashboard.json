@@ -1,0 +1,2689 @@
+{
+  "version": 1,
+  "generated_at": "2025-09-07T13:37:58.657216+00:00",
+  "schema": {
+    "id": "slug único",
+    "name": "nombre del biomarcador (sin unidades)",
+    "units": "unidades si aplican (texto)",
+    "category": "cardiovascular|metabolic|immune|hormonal|general",
+    "levels": {
+      "excelente": {
+        "unisex": "regla",
+        "male": "regla",
+        "female": "regla"
+      },
+      "bueno": {
+        "unisex": "regla",
+        "male": "regla",
+        "female": "regla"
+      },
+      "regular": {
+        "unisex": "regla",
+        "male": "regla",
+        "female": "regla"
+      },
+      "malo": {
+        "unisex": "regla",
+        "male": "regla",
+        "female": "regla"
+      }
+    },
+    "raw": "textos originales por nivel"
+  },
+  "biomarkers": [
+    {
+      "id": "glucosa",
+      "name": "Glucosa",
+      "units": "mg/dL",
+      "category": "metabolic",
+      "levels": {
+        "excelente": {
+          "unisex": "70 - 85",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "86 - 99",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "100 - 125",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "≥126",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "70 - 85",
+        "bueno": "86 - 99",
+        "regular": "100 - 125",
+        "malo": "≥126"
+      }
+    },
+    {
+      "id": "hemoglobina",
+      "name": "Hemoglobina",
+      "units": "H: g/dL / M: g/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": null,
+          "male": "14 - 17",
+          "female": "13 - 15"
+        },
+        "bueno": {
+          "unisex": null,
+          "male": "13 - 14",
+          "female": "12 - 13"
+        },
+        "regular": {
+          "unisex": null,
+          "male": "11 - 12.9",
+          "female": "11 - 11.9"
+        },
+        "malo": {
+          "unisex": "<11",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "H: 14 - 17 / M: 13 - 15",
+        "bueno": "H: 13 - 14 / M: 12 - 13",
+        "regular": "H: 11 - 12.9 / M: 11 - 11.9",
+        "malo": "<11"
+      }
+    },
+    {
+      "id": "hematocrito",
+      "name": "Hematocrito",
+      "units": "%",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": null,
+          "male": "45 - 50",
+          "female": "40 - 45"
+        },
+        "bueno": {
+          "unisex": null,
+          "male": "41 - 44",
+          "female": "36 - 39"
+        },
+        "regular": {
+          "unisex": null,
+          "male": "35 - 40",
+          "female": "32 - 35"
+        },
+        "malo": {
+          "unisex": "<35",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "H: 45 - 50 / M: 40 - 45",
+        "bueno": "H: 41 - 44 / M: 36 - 39",
+        "regular": "H: 35 - 40 / M: 32 - 35",
+        "malo": "<35"
+      }
+    },
+    {
+      "id": "leucocitos",
+      "name": "Leucocitos",
+      "units": "10^3/µL",
+      "category": "immune",
+      "levels": {
+        "excelente": {
+          "unisex": "5 - 7",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "4 - 10",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "3.5 - 4 / >10",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<3.5 o >12",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "5 - 7",
+        "bueno": "4 - 10",
+        "regular": "3.5 - 4 / >10",
+        "malo": "<3.5 o >12"
+      }
+    },
+    {
+      "id": "plaquetas",
+      "name": "Plaquetas",
+      "units": "10^3/µL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "200 - 300",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "150 - 400",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "130 - 149",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<130 o >450",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "200 - 300",
+        "bueno": "150 - 400",
+        "regular": "130 - 149",
+        "malo": "<130 o >450"
+      }
+    },
+    {
+      "id": "colesterol_total",
+      "name": "Colesterol total",
+      "units": "mg/dL",
+      "category": "cardiovascular",
+      "levels": {
+        "excelente": {
+          "unisex": "<170",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "170 - 199",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "200 - 239",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "≥240",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<170",
+        "bueno": "170 - 199",
+        "regular": "200 - 239",
+        "malo": "≥240"
+      }
+    },
+    {
+      "id": "hdl",
+      "name": "HDL",
+      "units": "mg/dL",
+      "category": "cardiovascular",
+      "levels": {
+        "excelente": {
+          "unisex": ">60",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "50 - 60",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "40 - 49",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<40",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": ">60",
+        "bueno": "50 - 60",
+        "regular": "40 - 49",
+        "malo": "<40"
+      }
+    },
+    {
+      "id": "ldl",
+      "name": "LDL",
+      "units": "mg/dL",
+      "category": "cardiovascular",
+      "levels": {
+        "excelente": {
+          "unisex": "<100",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "100 - 129",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "130 - 159",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "≥160",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<100",
+        "bueno": "100 - 129",
+        "regular": "130 - 159",
+        "malo": "≥160"
+      }
+    },
+    {
+      "id": "trigliceridos",
+      "name": "Triglicéridos",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<100",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "100 - 149",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "150 - 199",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "≥200",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<100",
+        "bueno": "100 - 149",
+        "regular": "150 - 199",
+        "malo": "≥200"
+      }
+    },
+    {
+      "id": "tsh",
+      "name": "TSH",
+      "units": "mIU/L",
+      "category": "hormonal",
+      "levels": {
+        "excelente": {
+          "unisex": "1 - 2",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "0.4 - 4",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "4 - 6",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">6",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "1 - 2",
+        "bueno": "0.4 - 4",
+        "regular": "4 - 6",
+        "malo": ">6"
+      }
+    },
+    {
+      "id": "t4_libre",
+      "name": "T4 libre",
+      "units": "ng/dL",
+      "category": "hormonal",
+      "levels": {
+        "excelente": {
+          "unisex": "1 - 1.6",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "0.8 - 0.99",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "0.7 - 0.79",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<0.7",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "1 - 1.6",
+        "bueno": "0.8 - 0.99",
+        "regular": "0.7 - 0.79",
+        "malo": "<0.7"
+      }
+    },
+    {
+      "id": "t3_libre",
+      "name": "T3 libre",
+      "units": "pg/mL",
+      "category": "hormonal",
+      "levels": {
+        "excelente": {
+          "unisex": "3 - 4.4",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "2.3 - 2.9",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "1.8 - 2.2",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<1.8",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "3 - 4.4",
+        "bueno": "2.3 - 2.9",
+        "regular": "1.8 - 2.2",
+        "malo": "<1.8"
+      }
+    },
+    {
+      "id": "hba1c",
+      "name": "HbA1c",
+      "units": "%",
+      "category": "metabolic",
+      "levels": {
+        "excelente": {
+          "unisex": "<5.3",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "5.3 - 5.6",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "5.7 - 6.4",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "≥6.5",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<5.3",
+        "bueno": "5.3 - 5.6",
+        "regular": "5.7 - 6.4",
+        "malo": "≥6.5"
+      }
+    },
+    {
+      "id": "insulina_en_ayunas",
+      "name": "Insulina en ayunas",
+      "units": "µU/mL",
+      "category": "metabolic",
+      "levels": {
+        "excelente": {
+          "unisex": "2 - 7",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "8 - 14",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "15 - 24",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">24",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "2 - 7",
+        "bueno": "8 - 14",
+        "regular": "15 - 24",
+        "malo": ">24"
+      }
+    },
+    {
+      "id": "homa_ir",
+      "name": "HOMA-IR",
+      "units": null,
+      "category": "metabolic",
+      "levels": {
+        "excelente": {
+          "unisex": "<1.5",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "1.5 - 2.4",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "2.5 - 3.9",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "≥4",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<1.5",
+        "bueno": "1.5 - 2.4",
+        "regular": "2.5 - 3.9",
+        "malo": "≥4"
+      }
+    },
+    {
+      "id": "vitamina_d",
+      "name": "Vitamina D",
+      "units": "ng/mL",
+      "category": "metabolic",
+      "levels": {
+        "excelente": {
+          "unisex": "40 - 60",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "30 - 39",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "20 - 29",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<20",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "40 - 60",
+        "bueno": "30 - 39",
+        "regular": "20 - 29",
+        "malo": "<20"
+      }
+    },
+    {
+      "id": "ferritina",
+      "name": "Ferritina",
+      "units": "ng/mL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": null,
+          "male": "80 - 200",
+          "female": "50 - 150"
+        },
+        "bueno": {
+          "unisex": null,
+          "male": "30 - 79",
+          "female": "20 - 49"
+        },
+        "regular": {
+          "unisex": null,
+          "male": "10 - 29",
+          "female": "10 - 19"
+        },
+        "malo": {
+          "unisex": "<10",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "H: 80 - 200 / M: 50 - 150",
+        "bueno": "H: 30 - 79 / M: 20 - 49",
+        "regular": "H: 10 - 29 / M: 10 - 19",
+        "malo": "<10"
+      }
+    },
+    {
+      "id": "creatinina",
+      "name": "Creatinina",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": null,
+          "male": "0.8 - 1.1",
+          "female": "0.6 - 0.9"
+        },
+        "bueno": {
+          "unisex": null,
+          "male": "1.2",
+          "female": "1.0"
+        },
+        "regular": {
+          "unisex": ">1.2",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">1.5",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "H: 0.8 - 1.1 / M: 0.6 - 0.9",
+        "bueno": "H: 1.2 / M: 1.0",
+        "regular": ">1.2",
+        "malo": ">1.5"
+      }
+    },
+    {
+      "id": "acido_urico",
+      "name": "Ácido úrico",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": null,
+          "male": "4 - 6",
+          "female": "3.5 - 5.5"
+        },
+        "bueno": {
+          "unisex": null,
+          "male": "6 - 7",
+          "female": "5.6 - 6"
+        },
+        "regular": {
+          "unisex": ">7 / >6",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">8 / >7",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "H: 4 - 6 / M: 3.5 - 5.5",
+        "bueno": "H: 6 - 7 / M: 5.6 - 6",
+        "regular": ">7 / >6",
+        "malo": ">8 / >7"
+      }
+    },
+    {
+      "id": "pcr_ultrasensible",
+      "name": "PCR ultrasensible",
+      "units": "mg/L",
+      "category": "immune",
+      "levels": {
+        "excelente": {
+          "unisex": "<0.5",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "0.5 - 1",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "1 - 3",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">3",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<0.5",
+        "bueno": "0.5 - 1",
+        "regular": "1 - 3",
+        "malo": ">3"
+      }
+    },
+    {
+      "id": "bilirrubina_total",
+      "name": "Bilirrubina total",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "0.3 - 0.8",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "0.9 - 1.2",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "1.3 - 1.9",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">2",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "0.3 - 0.8",
+        "bueno": "0.9 - 1.2",
+        "regular": "1.3 - 1.9",
+        "malo": ">2"
+      }
+    },
+    {
+      "id": "got_ast",
+      "name": "GOT / AST",
+      "units": "U/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<20",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "20 - 35",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "36 - 50",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">50",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<20",
+        "bueno": "20 - 35",
+        "regular": "36 - 50",
+        "malo": ">50"
+      }
+    },
+    {
+      "id": "gpt_alt",
+      "name": "GPT / ALT",
+      "units": "U/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<25",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "25 - 45",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "46 - 60",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">60",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<25",
+        "bueno": "25 - 45",
+        "regular": "46 - 60",
+        "malo": ">60"
+      }
+    },
+    {
+      "id": "fosfatasa_alcalina",
+      "name": "Fosfatasa alcalina",
+      "units": "U/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "50 - 100",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "101 - 130",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "131 - 180",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">180",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "50 - 100",
+        "bueno": "101 - 130",
+        "regular": "131 - 180",
+        "malo": ">180"
+      }
+    },
+    {
+      "id": "ggt",
+      "name": "GGT",
+      "units": "U/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<20",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "20 - 40",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "41 - 60",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">60",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<20",
+        "bueno": "20 - 40",
+        "regular": "41 - 60",
+        "malo": ">60"
+      }
+    },
+    {
+      "id": "hierro_serico",
+      "name": "Hierro sérico",
+      "units": "µg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "80 - 130",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "60 - 79",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "40 - 59",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<40",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "80 - 130",
+        "bueno": "60 - 79",
+        "regular": "40 - 59",
+        "malo": "<40"
+      }
+    },
+    {
+      "id": "transferrina",
+      "name": "Transferrina",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "200 - 320",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "170 - 199",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "140 - 169",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<140",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "200 - 320",
+        "bueno": "170 - 199",
+        "regular": "140 - 169",
+        "malo": "<140"
+      }
+    },
+    {
+      "id": "indice_saturacion_transferrina",
+      "name": "Índice Saturación Transferrina",
+      "units": "%",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "25 - 50",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "20 - 24",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "15 - 19",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<15 o >50",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "25 - 50",
+        "bueno": "20 - 24",
+        "regular": "15 - 19",
+        "malo": "<15 o >50"
+      }
+    },
+    {
+      "id": "vitamina_b12",
+      "name": "Vitamina B12",
+      "units": "pg/mL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "400 - 800",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "300 - 399",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "200 - 299",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<200",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "400 - 800",
+        "bueno": "300 - 399",
+        "regular": "200 - 299",
+        "malo": "<200"
+      }
+    },
+    {
+      "id": "acido_folico",
+      "name": "Ácido fólico",
+      "units": "ng/mL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": ">5",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "3.5 - 5",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "2 - 3.4",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<2",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": ">5",
+        "bueno": "3.5 - 5",
+        "regular": "2 - 3.4",
+        "malo": "<2"
+      }
+    },
+    {
+      "id": "calcio_total",
+      "name": "Calcio total",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "9 - 10",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "8.4 - 8.9",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "8.0 - 8.3",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<8 o >10.5",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "9 - 10",
+        "bueno": "8.4 - 8.9",
+        "regular": "8.0 - 8.3",
+        "malo": "<8 o >10.5"
+      }
+    },
+    {
+      "id": "magnesio",
+      "name": "Magnesio",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "1.8 - 2.2",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "1.6 - 1.7",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "1.4 - 1.5",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<1.4",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "1.8 - 2.2",
+        "bueno": "1.6 - 1.7",
+        "regular": "1.4 - 1.5",
+        "malo": "<1.4"
+      }
+    },
+    {
+      "id": "fsh",
+      "name": "FSH",
+      "units": "mUI/mL",
+      "category": "hormonal",
+      "levels": {
+        "excelente": {
+          "unisex": "1 - 8",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "9 - 12",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "13 - 20",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">20",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "1 - 8",
+        "bueno": "9 - 12",
+        "regular": "13 - 20",
+        "malo": ">20"
+      }
+    },
+    {
+      "id": "testosterona_libre",
+      "name": "Testosterona libre",
+      "units": "ng/dL",
+      "category": "hormonal",
+      "levels": {
+        "excelente": {
+          "unisex": "8 - 21",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "5 - 7.9",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "3 - 4.9",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<3",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "8 - 21",
+        "bueno": "5 - 7.9",
+        "regular": "3 - 4.9",
+        "malo": "<3"
+      }
+    },
+    {
+      "id": "filtrado_glomerular",
+      "name": "Filtrado glomerular",
+      "units": "ml/min/1.73m²",
+      "category": "metabolic",
+      "levels": {
+        "excelente": {
+          "unisex": ">90",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "60 - 89",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "30 - 59",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<30",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": ">90",
+        "bueno": "60 - 89",
+        "regular": "30 - 59",
+        "malo": "<30"
+      }
+    },
+    {
+      "id": "urea",
+      "name": "Urea",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "15 - 39",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "40 - 50",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "51 - 60",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">60",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "15 - 39",
+        "bueno": "40 - 50",
+        "regular": "51 - 60",
+        "malo": ">60"
+      }
+    },
+    {
+      "id": "psa_total",
+      "name": "PSA total",
+      "units": "ng/mL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<1",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "1 - 3",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "3.1 - 4",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">4",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<1",
+        "bueno": "1 - 3",
+        "regular": "3.1 - 4",
+        "malo": ">4"
+      }
+    },
+    {
+      "id": "ca_125",
+      "name": "CA 125",
+      "units": "U/mL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<21",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "21 - 35",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "36 - 50",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">50",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<21",
+        "bueno": "21 - 35",
+        "regular": "36 - 50",
+        "malo": ">50"
+      }
+    },
+    {
+      "id": "cea",
+      "name": "CEA",
+      "units": "ng/mL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<3",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "3 - 5",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "5.1 - 10",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">10",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<3",
+        "bueno": "3 - 5",
+        "regular": "5.1 - 10",
+        "malo": ">10"
+      }
+    }
+  ],
+  "by_id": {
+    "glucosa": {
+      "id": "glucosa",
+      "name": "Glucosa",
+      "units": "mg/dL",
+      "category": "metabolic",
+      "levels": {
+        "excelente": {
+          "unisex": "70 - 85",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "86 - 99",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "100 - 125",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "≥126",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "70 - 85",
+        "bueno": "86 - 99",
+        "regular": "100 - 125",
+        "malo": "≥126"
+      }
+    },
+    "hemoglobina": {
+      "id": "hemoglobina",
+      "name": "Hemoglobina",
+      "units": "H: g/dL / M: g/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": null,
+          "male": "14 - 17",
+          "female": "13 - 15"
+        },
+        "bueno": {
+          "unisex": null,
+          "male": "13 - 14",
+          "female": "12 - 13"
+        },
+        "regular": {
+          "unisex": null,
+          "male": "11 - 12.9",
+          "female": "11 - 11.9"
+        },
+        "malo": {
+          "unisex": "<11",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "H: 14 - 17 / M: 13 - 15",
+        "bueno": "H: 13 - 14 / M: 12 - 13",
+        "regular": "H: 11 - 12.9 / M: 11 - 11.9",
+        "malo": "<11"
+      }
+    },
+    "hematocrito": {
+      "id": "hematocrito",
+      "name": "Hematocrito",
+      "units": "%",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": null,
+          "male": "45 - 50",
+          "female": "40 - 45"
+        },
+        "bueno": {
+          "unisex": null,
+          "male": "41 - 44",
+          "female": "36 - 39"
+        },
+        "regular": {
+          "unisex": null,
+          "male": "35 - 40",
+          "female": "32 - 35"
+        },
+        "malo": {
+          "unisex": "<35",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "H: 45 - 50 / M: 40 - 45",
+        "bueno": "H: 41 - 44 / M: 36 - 39",
+        "regular": "H: 35 - 40 / M: 32 - 35",
+        "malo": "<35"
+      }
+    },
+    "leucocitos": {
+      "id": "leucocitos",
+      "name": "Leucocitos",
+      "units": "10^3/µL",
+      "category": "immune",
+      "levels": {
+        "excelente": {
+          "unisex": "5 - 7",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "4 - 10",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "3.5 - 4 / >10",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<3.5 o >12",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "5 - 7",
+        "bueno": "4 - 10",
+        "regular": "3.5 - 4 / >10",
+        "malo": "<3.5 o >12"
+      }
+    },
+    "plaquetas": {
+      "id": "plaquetas",
+      "name": "Plaquetas",
+      "units": "10^3/µL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "200 - 300",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "150 - 400",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "130 - 149",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<130 o >450",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "200 - 300",
+        "bueno": "150 - 400",
+        "regular": "130 - 149",
+        "malo": "<130 o >450"
+      }
+    },
+    "colesterol_total": {
+      "id": "colesterol_total",
+      "name": "Colesterol total",
+      "units": "mg/dL",
+      "category": "cardiovascular",
+      "levels": {
+        "excelente": {
+          "unisex": "<170",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "170 - 199",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "200 - 239",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "≥240",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<170",
+        "bueno": "170 - 199",
+        "regular": "200 - 239",
+        "malo": "≥240"
+      }
+    },
+    "hdl": {
+      "id": "hdl",
+      "name": "HDL",
+      "units": "mg/dL",
+      "category": "cardiovascular",
+      "levels": {
+        "excelente": {
+          "unisex": ">60",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "50 - 60",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "40 - 49",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<40",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": ">60",
+        "bueno": "50 - 60",
+        "regular": "40 - 49",
+        "malo": "<40"
+      }
+    },
+    "ldl": {
+      "id": "ldl",
+      "name": "LDL",
+      "units": "mg/dL",
+      "category": "cardiovascular",
+      "levels": {
+        "excelente": {
+          "unisex": "<100",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "100 - 129",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "130 - 159",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "≥160",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<100",
+        "bueno": "100 - 129",
+        "regular": "130 - 159",
+        "malo": "≥160"
+      }
+    },
+    "trigliceridos": {
+      "id": "trigliceridos",
+      "name": "Triglicéridos",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<100",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "100 - 149",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "150 - 199",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "≥200",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<100",
+        "bueno": "100 - 149",
+        "regular": "150 - 199",
+        "malo": "≥200"
+      }
+    },
+    "tsh": {
+      "id": "tsh",
+      "name": "TSH",
+      "units": "mIU/L",
+      "category": "hormonal",
+      "levels": {
+        "excelente": {
+          "unisex": "1 - 2",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "0.4 - 4",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "4 - 6",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">6",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "1 - 2",
+        "bueno": "0.4 - 4",
+        "regular": "4 - 6",
+        "malo": ">6"
+      }
+    },
+    "t4_libre": {
+      "id": "t4_libre",
+      "name": "T4 libre",
+      "units": "ng/dL",
+      "category": "hormonal",
+      "levels": {
+        "excelente": {
+          "unisex": "1 - 1.6",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "0.8 - 0.99",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "0.7 - 0.79",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<0.7",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "1 - 1.6",
+        "bueno": "0.8 - 0.99",
+        "regular": "0.7 - 0.79",
+        "malo": "<0.7"
+      }
+    },
+    "t3_libre": {
+      "id": "t3_libre",
+      "name": "T3 libre",
+      "units": "pg/mL",
+      "category": "hormonal",
+      "levels": {
+        "excelente": {
+          "unisex": "3 - 4.4",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "2.3 - 2.9",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "1.8 - 2.2",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<1.8",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "3 - 4.4",
+        "bueno": "2.3 - 2.9",
+        "regular": "1.8 - 2.2",
+        "malo": "<1.8"
+      }
+    },
+    "hba1c": {
+      "id": "hba1c",
+      "name": "HbA1c",
+      "units": "%",
+      "category": "metabolic",
+      "levels": {
+        "excelente": {
+          "unisex": "<5.3",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "5.3 - 5.6",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "5.7 - 6.4",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "≥6.5",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<5.3",
+        "bueno": "5.3 - 5.6",
+        "regular": "5.7 - 6.4",
+        "malo": "≥6.5"
+      }
+    },
+    "insulina_en_ayunas": {
+      "id": "insulina_en_ayunas",
+      "name": "Insulina en ayunas",
+      "units": "µU/mL",
+      "category": "metabolic",
+      "levels": {
+        "excelente": {
+          "unisex": "2 - 7",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "8 - 14",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "15 - 24",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">24",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "2 - 7",
+        "bueno": "8 - 14",
+        "regular": "15 - 24",
+        "malo": ">24"
+      }
+    },
+    "homa_ir": {
+      "id": "homa_ir",
+      "name": "HOMA-IR",
+      "units": null,
+      "category": "metabolic",
+      "levels": {
+        "excelente": {
+          "unisex": "<1.5",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "1.5 - 2.4",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "2.5 - 3.9",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "≥4",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<1.5",
+        "bueno": "1.5 - 2.4",
+        "regular": "2.5 - 3.9",
+        "malo": "≥4"
+      }
+    },
+    "vitamina_d": {
+      "id": "vitamina_d",
+      "name": "Vitamina D",
+      "units": "ng/mL",
+      "category": "metabolic",
+      "levels": {
+        "excelente": {
+          "unisex": "40 - 60",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "30 - 39",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "20 - 29",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<20",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "40 - 60",
+        "bueno": "30 - 39",
+        "regular": "20 - 29",
+        "malo": "<20"
+      }
+    },
+    "ferritina": {
+      "id": "ferritina",
+      "name": "Ferritina",
+      "units": "ng/mL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": null,
+          "male": "80 - 200",
+          "female": "50 - 150"
+        },
+        "bueno": {
+          "unisex": null,
+          "male": "30 - 79",
+          "female": "20 - 49"
+        },
+        "regular": {
+          "unisex": null,
+          "male": "10 - 29",
+          "female": "10 - 19"
+        },
+        "malo": {
+          "unisex": "<10",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "H: 80 - 200 / M: 50 - 150",
+        "bueno": "H: 30 - 79 / M: 20 - 49",
+        "regular": "H: 10 - 29 / M: 10 - 19",
+        "malo": "<10"
+      }
+    },
+    "creatinina": {
+      "id": "creatinina",
+      "name": "Creatinina",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": null,
+          "male": "0.8 - 1.1",
+          "female": "0.6 - 0.9"
+        },
+        "bueno": {
+          "unisex": null,
+          "male": "1.2",
+          "female": "1.0"
+        },
+        "regular": {
+          "unisex": ">1.2",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">1.5",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "H: 0.8 - 1.1 / M: 0.6 - 0.9",
+        "bueno": "H: 1.2 / M: 1.0",
+        "regular": ">1.2",
+        "malo": ">1.5"
+      }
+    },
+    "acido_urico": {
+      "id": "acido_urico",
+      "name": "Ácido úrico",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": null,
+          "male": "4 - 6",
+          "female": "3.5 - 5.5"
+        },
+        "bueno": {
+          "unisex": null,
+          "male": "6 - 7",
+          "female": "5.6 - 6"
+        },
+        "regular": {
+          "unisex": ">7 / >6",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">8 / >7",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "H: 4 - 6 / M: 3.5 - 5.5",
+        "bueno": "H: 6 - 7 / M: 5.6 - 6",
+        "regular": ">7 / >6",
+        "malo": ">8 / >7"
+      }
+    },
+    "pcr_ultrasensible": {
+      "id": "pcr_ultrasensible",
+      "name": "PCR ultrasensible",
+      "units": "mg/L",
+      "category": "immune",
+      "levels": {
+        "excelente": {
+          "unisex": "<0.5",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "0.5 - 1",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "1 - 3",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">3",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<0.5",
+        "bueno": "0.5 - 1",
+        "regular": "1 - 3",
+        "malo": ">3"
+      }
+    },
+    "bilirrubina_total": {
+      "id": "bilirrubina_total",
+      "name": "Bilirrubina total",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "0.3 - 0.8",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "0.9 - 1.2",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "1.3 - 1.9",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">2",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "0.3 - 0.8",
+        "bueno": "0.9 - 1.2",
+        "regular": "1.3 - 1.9",
+        "malo": ">2"
+      }
+    },
+    "got_ast": {
+      "id": "got_ast",
+      "name": "GOT / AST",
+      "units": "U/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<20",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "20 - 35",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "36 - 50",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">50",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<20",
+        "bueno": "20 - 35",
+        "regular": "36 - 50",
+        "malo": ">50"
+      }
+    },
+    "gpt_alt": {
+      "id": "gpt_alt",
+      "name": "GPT / ALT",
+      "units": "U/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<25",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "25 - 45",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "46 - 60",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">60",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<25",
+        "bueno": "25 - 45",
+        "regular": "46 - 60",
+        "malo": ">60"
+      }
+    },
+    "fosfatasa_alcalina": {
+      "id": "fosfatasa_alcalina",
+      "name": "Fosfatasa alcalina",
+      "units": "U/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "50 - 100",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "101 - 130",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "131 - 180",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">180",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "50 - 100",
+        "bueno": "101 - 130",
+        "regular": "131 - 180",
+        "malo": ">180"
+      }
+    },
+    "ggt": {
+      "id": "ggt",
+      "name": "GGT",
+      "units": "U/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<20",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "20 - 40",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "41 - 60",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">60",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<20",
+        "bueno": "20 - 40",
+        "regular": "41 - 60",
+        "malo": ">60"
+      }
+    },
+    "hierro_serico": {
+      "id": "hierro_serico",
+      "name": "Hierro sérico",
+      "units": "µg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "80 - 130",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "60 - 79",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "40 - 59",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<40",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "80 - 130",
+        "bueno": "60 - 79",
+        "regular": "40 - 59",
+        "malo": "<40"
+      }
+    },
+    "transferrina": {
+      "id": "transferrina",
+      "name": "Transferrina",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "200 - 320",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "170 - 199",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "140 - 169",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<140",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "200 - 320",
+        "bueno": "170 - 199",
+        "regular": "140 - 169",
+        "malo": "<140"
+      }
+    },
+    "indice_saturacion_transferrina": {
+      "id": "indice_saturacion_transferrina",
+      "name": "Índice Saturación Transferrina",
+      "units": "%",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "25 - 50",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "20 - 24",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "15 - 19",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<15 o >50",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "25 - 50",
+        "bueno": "20 - 24",
+        "regular": "15 - 19",
+        "malo": "<15 o >50"
+      }
+    },
+    "vitamina_b12": {
+      "id": "vitamina_b12",
+      "name": "Vitamina B12",
+      "units": "pg/mL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "400 - 800",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "300 - 399",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "200 - 299",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<200",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "400 - 800",
+        "bueno": "300 - 399",
+        "regular": "200 - 299",
+        "malo": "<200"
+      }
+    },
+    "acido_folico": {
+      "id": "acido_folico",
+      "name": "Ácido fólico",
+      "units": "ng/mL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": ">5",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "3.5 - 5",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "2 - 3.4",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<2",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": ">5",
+        "bueno": "3.5 - 5",
+        "regular": "2 - 3.4",
+        "malo": "<2"
+      }
+    },
+    "calcio_total": {
+      "id": "calcio_total",
+      "name": "Calcio total",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "9 - 10",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "8.4 - 8.9",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "8.0 - 8.3",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<8 o >10.5",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "9 - 10",
+        "bueno": "8.4 - 8.9",
+        "regular": "8.0 - 8.3",
+        "malo": "<8 o >10.5"
+      }
+    },
+    "magnesio": {
+      "id": "magnesio",
+      "name": "Magnesio",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "1.8 - 2.2",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "1.6 - 1.7",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "1.4 - 1.5",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<1.4",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "1.8 - 2.2",
+        "bueno": "1.6 - 1.7",
+        "regular": "1.4 - 1.5",
+        "malo": "<1.4"
+      }
+    },
+    "fsh": {
+      "id": "fsh",
+      "name": "FSH",
+      "units": "mUI/mL",
+      "category": "hormonal",
+      "levels": {
+        "excelente": {
+          "unisex": "1 - 8",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "9 - 12",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "13 - 20",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">20",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "1 - 8",
+        "bueno": "9 - 12",
+        "regular": "13 - 20",
+        "malo": ">20"
+      }
+    },
+    "testosterona_libre": {
+      "id": "testosterona_libre",
+      "name": "Testosterona libre",
+      "units": "ng/dL",
+      "category": "hormonal",
+      "levels": {
+        "excelente": {
+          "unisex": "8 - 21",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "5 - 7.9",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "3 - 4.9",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<3",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "8 - 21",
+        "bueno": "5 - 7.9",
+        "regular": "3 - 4.9",
+        "malo": "<3"
+      }
+    },
+    "filtrado_glomerular": {
+      "id": "filtrado_glomerular",
+      "name": "Filtrado glomerular",
+      "units": "ml/min/1.73m²",
+      "category": "metabolic",
+      "levels": {
+        "excelente": {
+          "unisex": ">90",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "60 - 89",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "30 - 59",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<30",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": ">90",
+        "bueno": "60 - 89",
+        "regular": "30 - 59",
+        "malo": "<30"
+      }
+    },
+    "urea": {
+      "id": "urea",
+      "name": "Urea",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "15 - 39",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "40 - 50",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "51 - 60",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">60",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "15 - 39",
+        "bueno": "40 - 50",
+        "regular": "51 - 60",
+        "malo": ">60"
+      }
+    },
+    "psa_total": {
+      "id": "psa_total",
+      "name": "PSA total",
+      "units": "ng/mL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<1",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "1 - 3",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "3.1 - 4",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">4",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<1",
+        "bueno": "1 - 3",
+        "regular": "3.1 - 4",
+        "malo": ">4"
+      }
+    },
+    "ca_125": {
+      "id": "ca_125",
+      "name": "CA 125",
+      "units": "U/mL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<21",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "21 - 35",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "36 - 50",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">50",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<21",
+        "bueno": "21 - 35",
+        "regular": "36 - 50",
+        "malo": ">50"
+      }
+    },
+    "cea": {
+      "id": "cea",
+      "name": "CEA",
+      "units": "ng/mL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "<3",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "3 - 5",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "5.1 - 10",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": ">10",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "<3",
+        "bueno": "3 - 5",
+        "regular": "5.1 - 10",
+        "malo": ">10"
+      }
+    }
+  }
+}
