@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PdfImporter from './components/PdfImporter'
-import Dashboard from './components/Dashboard'
 import DashboardAnaliticasLocalStorage from './components/DashboardWithLocal'
-import { ReferenceData } from './types'
 
 type Tab = 'import' | 'dash'
 
