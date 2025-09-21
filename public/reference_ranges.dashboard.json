@@ -1356,6 +1356,380 @@
         "regular": "5.1 - 10",
         "malo": ">10"
       }
+    },
+    {
+      "id": "basofilos",
+      "name": "Basófilos",
+      "units": "%",
+      "category": "immune",
+      "levels": {
+        "excelente": {
+          "unisex": "0.5 - 1.0",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "0.3 - 0.49 / 1.01 - 1.5",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "0.1 - 0.29 / 1.51 - 2",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<0.1 o >2",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "0.5 - 1.0",
+        "bueno": "0.3 - 0.49 / 1.01 - 1.5",
+        "regular": "0.1 - 0.29 / 1.51 - 2",
+        "malo": "<0.1 o >2"
+      }
+    },
+    {
+      "id": "eosinofilos",
+      "name": "Eosinófilos",
+      "units": "%",
+      "category": "immune",
+      "levels": {
+        "excelente": {
+          "unisex": "1 - 3",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "0.5 - 0.9 / 3.1 - 4",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "0.3 - 0.49 / 4.1 - 5",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<0.3 o >5",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "1 - 3",
+        "bueno": "0.5 - 0.9 / 3.1 - 4",
+        "regular": "0.3 - 0.49 / 4.1 - 5",
+        "malo": "<0.3 o >5"
+      }
+    },
+    {
+      "id": "monocitos",
+      "name": "Monocitos",
+      "units": "%",
+      "category": "immune",
+      "levels": {
+        "excelente": {
+          "unisex": "3 - 8",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "2 - 2.9 / 8.1 - 10",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "1 - 1.9 / 10.1 - 12",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<1 o >12",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "3 - 8",
+        "bueno": "2 - 2.9 / 8.1 - 10",
+        "regular": "1 - 1.9 / 10.1 - 12",
+        "malo": "<1 o >12"
+      }
+    },
+    {
+      "id": "linfocitos",
+      "name": "Linfocitos",
+      "units": "%",
+      "category": "immune",
+      "levels": {
+        "excelente": {
+          "unisex": "30 - 40",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "25 - 29 / 41 - 45",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "20 - 24 / 46 - 50",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<20 o >50",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "30 - 40",
+        "bueno": "25 - 29 / 41 - 45",
+        "regular": "20 - 24 / 46 - 50",
+        "malo": "<20 o >50"
+      }
+    },
+    {
+      "id": "potasio",
+      "name": "Potasio",
+      "units": "mmol/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "4.0 - 4.5",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "3.5 - 3.9 / 4.6 - 5.0",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "3.2 - 3.4 / 5.1 - 5.5",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<3.2 o >5.5",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "4.0 - 4.5",
+        "bueno": "3.5 - 3.9 / 4.6 - 5.0",
+        "regular": "3.2 - 3.4 / 5.1 - 5.5",
+        "malo": "<3.2 o >5.5"
+      }
+    },
+    {
+      "id": "sodio",
+      "name": "Sodio",
+      "units": "mmol/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "138 - 142",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "135 - 137 / 143 - 145",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "132 - 134 / 146 - 148",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<132 o >148",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "138 - 142",
+        "bueno": "135 - 137 / 143 - 145",
+        "regular": "132 - 134 / 146 - 148",
+        "malo": "<132 o >148"
+      }
+    },
+    {
+      "id": "fosforo",
+      "name": "Fósforo",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "3.0 - 4.0",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "2.5 - 2.9 / 4.1 - 4.5",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "2.2 - 2.4 / 4.6 - 5.0",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<2.2 o >5.0",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "3.0 - 4.0",
+        "bueno": "2.5 - 2.9 / 4.1 - 4.5",
+        "regular": "2.2 - 2.4 / 4.6 - 5.0",
+        "malo": "<2.2 o >5.0"
+      }
+    },
+    {
+      "id": "zinc",
+      "name": "Zinc",
+      "units": "µg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "90 - 110",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "70 - 89 / 111 - 120",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "60 - 69 / 121 - 130",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<60 o >130",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "90 - 110",
+        "bueno": "70 - 89 / 111 - 120",
+        "regular": "60 - 69 / 121 - 130",
+        "malo": "<60 o >130"
+      }
+    },
+    {
+      "id": "albumina",
+      "name": "Albúmina",
+      "units": "g/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "4.2 - 4.8",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "3.8 - 4.1 / 4.9 - 5.1",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "3.5 - 3.7 / 5.2 - 5.5",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<3.5 o >5.5",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "4.2 - 4.8",
+        "bueno": "3.8 - 4.1 / 4.9 - 5.1",
+        "regular": "3.5 - 3.7 / 5.2 - 5.5",
+        "malo": "<3.5 o >5.5"
+      }
+    },
+    {
+      "id": "proteinas_totales",
+      "name": "Proteínas totales",
+      "units": "g/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "6.8 - 7.8",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "6.4 - 6.7 / 7.9 - 8.3",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "6.0 - 6.3 / 8.4 - 8.8",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<6.0 o >8.8",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "6.8 - 7.8",
+        "bueno": "6.4 - 6.7 / 7.9 - 8.3",
+        "regular": "6.0 - 6.3 / 8.4 - 8.8",
+        "malo": "<6.0 o >8.8"
+      }
+    },
+    {
+      "id": "ldh",
+      "name": "LDH",
+      "units": "U/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "160 - 220",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "140 - 159 / 221 - 260",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "120 - 139 / 261 - 300",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<120 o >300",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "160 - 220",
+        "bueno": "140 - 159 / 221 - 260",
+        "regular": "120 - 139 / 261 - 300",
+        "malo": "<120 o >300"
+      }
     }
   ],
   "by_id": {
@@ -2683,6 +3057,380 @@
         "bueno": "3 - 5",
         "regular": "5.1 - 10",
         "malo": ">10"
+      }
+    },
+    "basofilos": {
+      "id": "basofilos",
+      "name": "Basófilos",
+      "units": "%",
+      "category": "immune",
+      "levels": {
+        "excelente": {
+          "unisex": "0.5 - 1.0",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "0.3 - 0.49 / 1.01 - 1.5",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "0.1 - 0.29 / 1.51 - 2",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<0.1 o >2",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "0.5 - 1.0",
+        "bueno": "0.3 - 0.49 / 1.01 - 1.5",
+        "regular": "0.1 - 0.29 / 1.51 - 2",
+        "malo": "<0.1 o >2"
+      }
+    },
+    "eosinofilos": {
+      "id": "eosinofilos",
+      "name": "Eosinófilos",
+      "units": "%",
+      "category": "immune",
+      "levels": {
+        "excelente": {
+          "unisex": "1 - 3",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "0.5 - 0.9 / 3.1 - 4",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "0.3 - 0.49 / 4.1 - 5",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<0.3 o >5",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "1 - 3",
+        "bueno": "0.5 - 0.9 / 3.1 - 4",
+        "regular": "0.3 - 0.49 / 4.1 - 5",
+        "malo": "<0.3 o >5"
+      }
+    },
+    "monocitos": {
+      "id": "monocitos",
+      "name": "Monocitos",
+      "units": "%",
+      "category": "immune",
+      "levels": {
+        "excelente": {
+          "unisex": "3 - 8",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "2 - 2.9 / 8.1 - 10",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "1 - 1.9 / 10.1 - 12",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<1 o >12",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "3 - 8",
+        "bueno": "2 - 2.9 / 8.1 - 10",
+        "regular": "1 - 1.9 / 10.1 - 12",
+        "malo": "<1 o >12"
+      }
+    },
+    "linfocitos": {
+      "id": "linfocitos",
+      "name": "Linfocitos",
+      "units": "%",
+      "category": "immune",
+      "levels": {
+        "excelente": {
+          "unisex": "30 - 40",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "25 - 29 / 41 - 45",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "20 - 24 / 46 - 50",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<20 o >50",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "30 - 40",
+        "bueno": "25 - 29 / 41 - 45",
+        "regular": "20 - 24 / 46 - 50",
+        "malo": "<20 o >50"
+      }
+    },
+    "potasio": {
+      "id": "potasio",
+      "name": "Potasio",
+      "units": "mmol/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "4.0 - 4.5",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "3.5 - 3.9 / 4.6 - 5.0",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "3.2 - 3.4 / 5.1 - 5.5",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<3.2 o >5.5",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "4.0 - 4.5",
+        "bueno": "3.5 - 3.9 / 4.6 - 5.0",
+        "regular": "3.2 - 3.4 / 5.1 - 5.5",
+        "malo": "<3.2 o >5.5"
+      }
+    },
+    "sodio": {
+      "id": "sodio",
+      "name": "Sodio",
+      "units": "mmol/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "138 - 142",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "135 - 137 / 143 - 145",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "132 - 134 / 146 - 148",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<132 o >148",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "138 - 142",
+        "bueno": "135 - 137 / 143 - 145",
+        "regular": "132 - 134 / 146 - 148",
+        "malo": "<132 o >148"
+      }
+    },
+    "fosforo": {
+      "id": "fosforo",
+      "name": "Fósforo",
+      "units": "mg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "3.0 - 4.0",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "2.5 - 2.9 / 4.1 - 4.5",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "2.2 - 2.4 / 4.6 - 5.0",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<2.2 o >5.0",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "3.0 - 4.0",
+        "bueno": "2.5 - 2.9 / 4.1 - 4.5",
+        "regular": "2.2 - 2.4 / 4.6 - 5.0",
+        "malo": "<2.2 o >5.0"
+      }
+    },
+    "zinc": {
+      "id": "zinc",
+      "name": "Zinc",
+      "units": "µg/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "90 - 110",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "70 - 89 / 111 - 120",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "60 - 69 / 121 - 130",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<60 o >130",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "90 - 110",
+        "bueno": "70 - 89 / 111 - 120",
+        "regular": "60 - 69 / 121 - 130",
+        "malo": "<60 o >130"
+      }
+    },
+    "albumina": {
+      "id": "albumina",
+      "name": "Albúmina",
+      "units": "g/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "4.2 - 4.8",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "3.8 - 4.1 / 4.9 - 5.1",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "3.5 - 3.7 / 5.2 - 5.5",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<3.5 o >5.5",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "4.2 - 4.8",
+        "bueno": "3.8 - 4.1 / 4.9 - 5.1",
+        "regular": "3.5 - 3.7 / 5.2 - 5.5",
+        "malo": "<3.5 o >5.5"
+      }
+    },
+    "proteinas_totales": {
+      "id": "proteinas_totales",
+      "name": "Proteínas totales",
+      "units": "g/dL",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "6.8 - 7.8",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "6.4 - 6.7 / 7.9 - 8.3",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "6.0 - 6.3 / 8.4 - 8.8",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<6.0 o >8.8",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "6.8 - 7.8",
+        "bueno": "6.4 - 6.7 / 7.9 - 8.3",
+        "regular": "6.0 - 6.3 / 8.4 - 8.8",
+        "malo": "<6.0 o >8.8"
+      }
+    },
+    "ldh": {
+      "id": "ldh",
+      "name": "LDH",
+      "units": "U/L",
+      "category": "general",
+      "levels": {
+        "excelente": {
+          "unisex": "160 - 220",
+          "male": null,
+          "female": null
+        },
+        "bueno": {
+          "unisex": "140 - 159 / 221 - 260",
+          "male": null,
+          "female": null
+        },
+        "regular": {
+          "unisex": "120 - 139 / 261 - 300",
+          "male": null,
+          "female": null
+        },
+        "malo": {
+          "unisex": "<120 o >300",
+          "male": null,
+          "female": null
+        }
+      },
+      "raw": {
+        "excelente": "160 - 220",
+        "bueno": "140 - 159 / 221 - 260",
+        "regular": "120 - 139 / 261 - 300",
+        "malo": "<120 o >300"
       }
     }
   }

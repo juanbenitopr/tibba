@@ -14,110 +14,17 @@ import {
   RadialBarChart,
   RadialBar,
   PolarAngleAxis,
-  Cell,
 } from "recharts"
-import { Analysis, BiomarkerRef, BiomarkerRow, LEVEL_BADGE_CLASSES, LEVEL_ORDER, LevelKey, ReferenceData, Sex } from "src/types"
+import { Analysis, BiomarkerRow } from "src/types"
 import { normalizeData } from "src/utils/normalizeText"
 import { colorByScore, computeScores, rowScore } from "src/utils/scoringUtil"
-import { getAnalyses, loadReference } from "src/utils/storage"
+import { getAnalyses } from "src/utils/storage"
 import { classNames, toPct } from "src/utils/uiHelpers"
-
-/**
- * ✅ Dashboard de Analíticas (localStorage) — Versión "Bienestar" por colores
- *
- * Muestra:
- *  - Selector de analítica guardada
- *  - Resumen de salud con gauge (score 0..100)
- *  - Mini‑gauges por categoría (cardiovascular, metabolic, immune, hormonal, general)
- *  - Tabla coloreada por estado (en rango / fuera de rango, desviación)
- *  - Gráfica de barras de los biomarcadores filtrados (con semáforos)
- *
- * Entrada esperada en localStorage (key: "analyses"):
- *   [{ id: string, name: string, data: any }]
- */
-
-// ===================== Utils localStorage =====================
-function slugify(value: string) {
-  return value
-    ? value
-        .normalize("NFKD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^a-zA-Z0-9]+/g, "_")
-        .replace(/^_+|_+$/g, "")
-        .toLowerCase()
-    : ""
-}
-
-// Evalúa una regla elemental: "< x", "> x", "≤ x", "≥ x", "a - b" o "= x"
-function matchSingleRule(rule: string, value: number): boolean {
-  const r = rule.replace(",", ".").trim()
-
-  // Rango "a - b"
-  const range = r.match(/^(-?\d+(?:\.\d+)?)\s*[-–]\s*(-?\d+(?:\.\d+)?)/)
-  if (range) {
-    const a = parseFloat(range[1])
-    const b = parseFloat(range[2])
-    return value >= Math.min(a, b) && value <= Math.max(a, b)
-  }
-
-  // Comparadores
-  const cmp = r.match(/^([<>]=?|≥|≤)\s*(-?\d+(?:\.\d+)?)/i)
-  if (cmp) {
-    const op = cmp[1]
-    const num = parseFloat(cmp[2])
-    switch (op) {
-      case "<":
-        return value < num
-      case ">":
-        return value > num
-      case "<=":
-      case "≤":
-        return value <= num
-      case ">=":
-      case "≥":
-        return value >= num
-    }
-  }
-
-  // Exacto
-  const exact = r.match(/^(-?\d+(?:\.\d+)?)$/)
-  if (exact) return value === parseFloat(exact[1])
-
-  return false
-}
-
-// Divide una regla por "o" "/" ";" y evalúa como OR
-function matchRule(rule: string | null, value: number): boolean {
-  if (!rule) return false
-  const parts = rule
-    .replace(/\s*o\s*/gi, "|")
-    .replace(/\s*\/\s*/g, "|")
-    .replace(/\s*;\s*/g, "|")
-    .split("|")
-    .map((s) => s.trim())
-  return parts.some((p) => p && matchSingleRule(p, value))
-}
-
-function pickSexRule(entry: BiomarkerRef, level: LevelKey, _sex: Sex = "U"): string | null {
-  const set = entry.levels[level]
-  return set.unisex ?? set.male ?? set.female ?? null
-}
-
-function computeLevel(entry: BiomarkerRef, value: number, sex: Sex = "U"): LevelKey | null {
-  for (const lvl of LEVEL_ORDER) {
-    const rule = pickSexRule(entry, lvl, sex)
-    if (rule && matchRule(rule, value)) return lvl
-  }
-  const bad = pickSexRule(entry, "malo", sex)
-  if (bad && matchRule(bad, value)) return "malo"
-  return null
-}
-
-// ===================== Normalización =====================
 
 // ===================== Scoring =====================
 
 
+// ===================== UI helpers =====================
 // ===================== Componente =====================
 export default function DashboardAnaliticasLocalStorageBienestar() {
   const [analyses, setAnalyses] = useState<Analysis[]>([])
@@ -125,8 +32,6 @@ export default function DashboardAnaliticasLocalStorageBienestar() {
   const [query, setQuery] = useState("")
   const [categoryFilter, setCategoryFilter] = useState<string>("all")
   const [trendBiomarker, setTrendBiomarker] = useState<string>("")
-  const [refData, setRefData] = useState<ReferenceData | null>(null)
-  const [refLoading, setRefLoading] = useState(true)
 
   // Cargar analyses del LS
   useEffect(() => {
@@ -135,62 +40,10 @@ export default function DashboardAnaliticasLocalStorageBienestar() {
     if (a.length && !selectedId) setSelectedId(a[0].id)
   }, [])
 
-  // Cargar referencias desde localStorage (con fallback a fetch)
-  useEffect(() => {
-    let mounted = true
-    ;(async () => {
-      try {
-        const data = await loadReference()
-        if (mounted) setRefData(data)
-      } catch (e) {
-        console.error("Failed to load reference ranges", e)
-      } finally {
-        if (mounted) setRefLoading(false)
-      }
-    })()
-    return () => {
-      mounted = false
-    }
-  }, [])
-
   const selected = useMemo(() => analyses.find((a) => a.id === selectedId) ?? null, [analyses, selectedId])
-  const baseRows = useMemo(() => normalizeData(selected?.data), [selected])
-  const rows = useMemo(() => {
-    return baseRows.map((row) => {
-      if (!refData) return { ...row, referenceLevel: null, referenceText: null }
-      const id = slugify(row.name)
-      const refEntry = refData.by_id?.[id]
-      if (!refEntry) return { ...row, referenceLevel: null, referenceText: null }
-
-      const level = computeLevel(refEntry, row.value, "U")
-      const referenceText =
-        pickSexRule(refEntry, "bueno", "U") ??
-        pickSexRule(refEntry, "excelente", "U") ??
-        pickSexRule(refEntry, "regular", "U") ??
-        pickSexRule(refEntry, "malo", "U") ??
-        null
-
-      return {
-        ...row,
-        unit: row.unit ?? refEntry.units ?? undefined,
-        category: row.category ?? refEntry.category,
-        referenceLevel: level,
-        referenceText,
-      }
-    })
-  }, [baseRows, refData])
+  const rows = useMemo(() => normalizeData(selected?.data), [selected])
 
   const { overall, catScores } = useMemo(() => computeScores(rows), [rows])
-
-  const inRangeRatio = useMemo(() => {
-    if (!rows.length) return 1
-    const okCount = rows.filter((r) => {
-      if (r.referenceLevel) return r.referenceLevel !== "malo"
-      return (r.refLow == null || r.value >= (r.refLow ?? -Infinity)) && (r.refHigh == null || r.value <= (r.refHigh ?? Infinity))
-    }).length
-    return okCount / rows.length
-  }, [rows])
-  const inRangePct = Math.round(inRangeRatio * 100)
 
   const categories = useMemo(() => {
     const set = new Set<string>()
@@ -209,7 +62,7 @@ export default function DashboardAnaliticasLocalStorageBienestar() {
     if (categoryFilter !== "all") {
       r = r.filter((x) => (x.category ?? "").toLowerCase() === categoryFilter.toLowerCase())
     }
-    return [...r].sort((a, b) => a.name.localeCompare(b.name))
+    return r.sort((a, b) => a.name.localeCompare(b.name))
   }, [rows, query, categoryFilter])
 
   const topForChart = useMemo(() => {
@@ -235,10 +88,7 @@ export default function DashboardAnaliticasLocalStorageBienestar() {
   const worst = useMemo(() => {
     const withScore = rows.map((r) => ({ ...r, _score: rowScore(r) })) as (BiomarkerRow & { _score: number })[]
     return withScore
-      .filter((r) => {
-        if (r.referenceLevel) return r.referenceLevel === "malo"
-        return r._score < 1 && (r.refLow != null || r.refHigh != null)
-      })
+      .filter((r) => r._score < 1 && (r.refLow != null || r.refHigh != null))
       .sort((a, b) => a._score - b._score)
       .slice(0, 6)
   }, [rows])
@@ -251,10 +101,7 @@ export default function DashboardAnaliticasLocalStorageBienestar() {
       <div className="flex flex-col md:flex-row md:items-end gap-4">
         <div className="flex-1">
           <h1 className="text-2xl font-semibold tracking-tight">Mi salud hoy</h1>
-          <p className="text-sm text-gray-500">
-            Analítica desde tu navegador (localStorage). Colores = estado vs rango de referencia.{" "}
-            {refLoading ? "(cargando referencias…)" : refData ? `Ref v${refData.version}` : "(sin referencias)"}
-          </p>
+          <p className="text-sm text-gray-500">Analítica desde tu navegador (localStorage). Colores = estado vs rango de referencia.</p>
         </div>
 
         {/* Selector de analítica */}
@@ -307,9 +154,7 @@ export default function DashboardAnaliticasLocalStorageBienestar() {
                 El score combina qué porcentaje de biomarcadores están dentro de rango (y cuán lejos están los que no).
               </p>
               <ul className="text-sm text-gray-600 list-disc ml-5 mt-2">
-                <li>
-                  <strong>{inRangePct}%</strong> en rango
-                </li>
+                <li><strong>{Math.round(rows.filter(r => (r.refLow == null || r.value >= (r.refLow ?? -Infinity)) && (r.refHigh == null || r.value <= (r.refHigh ?? Infinity))).length / Math.max(1, rows.length) * 100)}%</strong> en rango</li>
                 <li>{rows.length} biomarcadores analizados</li>
               </ul>
             </div>
@@ -349,12 +194,13 @@ export default function DashboardAnaliticasLocalStorageBienestar() {
           <h2 className="text-lg font-semibold mb-2">A vigilar (fuera de rango)</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
             {worst.map((r) => {
-              const severity = Math.round((1 - Math.max(0, Math.min(1, r._score))) * 100)
-              const width = Math.min(100, Math.max(0, severity))
-              const refDisplay =
-                r.referenceText ??
-                (r.refLow != null || r.refHigh != null ? `${r.refLow ?? "—"} - ${r.refHigh ?? "—"}` : "—")
-
+              const lowOk = r.refLow == null || r.value >= (r.refLow ?? -Infinity)
+              const highOk = r.refHigh == null || r.value <= (r.refHigh ?? Infinity)
+              const low = r.refLow
+              const high = r.refHigh
+              const delta = !lowOk ? (Number(low) - r.value) : !highOk ? (r.value - Number(high)) : 0
+              const base = (high != null && low != null) ? Math.max(1e-9, Number(high) - Number(low)) : Math.max(1, Math.abs(r.value) * 0.2)
+              const pct = Math.min(200, Math.round((Math.abs(delta) / base) * 100))
               return (
                 <div key={r.name} className="border rounded-xl p-3">
                   <div className="flex items-center justify-between">
@@ -362,13 +208,11 @@ export default function DashboardAnaliticasLocalStorageBienestar() {
                     <div className="text-xs text-gray-500 capitalize">{r.category ?? "general"}</div>
                   </div>
                   <div className="text-sm mt-1">{r.value} {r.unit ?? ""}</div>
-                  <div className="text-xs text-gray-500">Ref: {refDisplay}</div>
+                  <div className="text-xs text-gray-500">Ref: {low ?? "—"} - {high ?? "—"}</div>
                   <div className="mt-2 h-2 bg-gray-100 rounded-full overflow-hidden">
-                    <div className="h-full" style={{ width: `${width}%`, backgroundColor: "#e11d48" }} />
+                    <div className="h-full" style={{ width: `${Math.min(100, pct)}%`, backgroundColor: "#e11d48" }} />
                   </div>
-                  <div className="text-xs text-rose-600 mt-1">
-                    {r.referenceLevel ? "Fuera de rango según referencia" : `${width}% fuera (aprox.)`}
-                  </div>
+                  <div className="text-xs text-rose-600 mt-1">{pct}% fuera (aprox.)</div>
                 </div>
               )
             })}
@@ -432,13 +276,14 @@ export default function DashboardAnaliticasLocalStorageBienestar() {
                   dataKey="value"
                   name="Valor"
                   radius={[6, 6, 0, 0]}
+                  // Color dinámico por barra según score
                   fillOpacity={1}
                   label={{ position: "top", fontSize: 11 }}
                 >
                   {topForChart.map((entry, index) => {
                     const s = rowScore(entry)
                     const c = colorByScore(s).ring
-                    return <Cell key={`cell-${index}`} fill={c} />
+                    return <cell key={`cell-${index}`} fill={c} />
                   })}
                 </Bar>
               </BarChart>
@@ -496,13 +341,13 @@ export default function DashboardAnaliticasLocalStorageBienestar() {
                 const s = rowScore(r)
                 const c = colorByScore(s)
 
-                let detail: string | null = null
-                if (!ok && (r.refLow != null || r.refHigh != null)) {
-                  const delta = !inLow ? (Number(r.refLow) - r.value) : !inHigh ? (r.value - Number(r.refHigh)) : 0
-                  const base =
-                    r.refLow != null && r.refHigh != null
-                      ? Math.max(1e-9, Number(r.refHigh) - Number(r.refLow))
-                      : Math.max(1, Math.abs(r.value) * 0.2)
+                const low = r.refLow
+                const high = r.refHigh
+                let badge = ok ? "En rango" : "Fuera de rango"
+                let detail = ""
+                if (!ok && (low != null || high != null)) {
+                  const delta = !inLow ? (Number(low) - r.value) : !inHigh ? (r.value - Number(high)) : 0
+                  const base = (high != null && low != null) ? Math.max(1e-9, Number(high) - Number(low)) : Math.max(1, Math.abs(r.value) * 0.2)
                   const pct = Math.round((Math.abs(delta) / base) * 100)
                   detail = ` · ~${pct}% fuera`
                 }
@@ -513,9 +358,7 @@ export default function DashboardAnaliticasLocalStorageBienestar() {
                     <td className="px-4 py-2">{r.value}</td>
                     <td className="px-4 py-2">{r.unit ?? "—"}</td>
                     <td className="px-4 py-2">
-                      {r.referenceText ? (
-                        r.referenceText
-                      ) : r.refLow != null || r.refHigh != null ? (
+                      {r.refLow != null || r.refHigh != null ? (
                         <span>
                           {r.refLow != null ? r.refLow : ""}
                           {r.refLow != null || r.refHigh != null ? " - " : ""}
@@ -527,16 +370,10 @@ export default function DashboardAnaliticasLocalStorageBienestar() {
                     </td>
                     <td className="px-4 py-2 capitalize">{r.category ?? <span className="text-gray-400">—</span>}</td>
                     <td className="px-4 py-2">
-                      {r.referenceLevel ? (
-                        <span className={`px-2 py-1 text-xs rounded-full ${LEVEL_BADGE_CLASSES[r.referenceLevel]}`}>
-                          {r.referenceLevel}
-                        </span>
-                      ) : (
-                        <span className={classNames("px-2 py-1 text-xs rounded-full", c.bg, c.text)}>
-                          {ok ? "En rango" : "Fuera de rango"}
-                          {detail && <span className="text-gray-400">{detail}</span>}
-                        </span>
-                      )}
+                      <span className={classNames("px-2 py-1 text-xs rounded-full", c.bg, c.text)}>
+                        {badge}
+                        <span className="text-gray-400">{detail}</span>
+                      </span>
                     </td>
                   </tr>
                 )
@@ -563,4 +400,3 @@ export default function DashboardAnaliticasLocalStorageBienestar() {
     </div>
   )
 }
-

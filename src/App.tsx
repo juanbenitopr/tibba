@@ -8,31 +8,6 @@ type Tab = 'import' | 'dash'
 
 const App: React.FC = () => {
   const [tab, setTab] = useState<Tab>('import')
-    const [reference, setReference] = useState<ReferenceData | null>(null);
-
-    useEffect(() => {
-      const local = localStorage.getItem("reference_ranges");
-      if (local) {
-        try {
-          const parsed: ReferenceData = JSON.parse(local);
-          setReference(parsed);
-          return;
-        } catch (e) {
-          console.error("Error leyendo reference_ranges de localStorage", e);
-        }
-      }
-
-      // Si no hay nada en localStorage → fetch del archivo estático
-      fetch("/reference_ranges.dashboard.json")
-        .then((res) => res.json())
-        .then((data: ReferenceData) => {
-          localStorage.setItem("reference_ranges", JSON.stringify(data));
-          setReference(data);
-        })
-        .catch((err) => console.error("Error cargando referencias", err));
-    }, []);
-
-  if (!reference) return <div>Cargando referencias...</div>;
 
   return (
     <div style={{ maxWidth: 980, margin: '28px auto', padding: 16, fontFamily: 'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell' }}>
@@ -41,7 +16,7 @@ const App: React.FC = () => {
         <button onClick={() => setTab('import')} disabled={tab==='import'}>Importar PDF</button>
         <button onClick={() => setTab('dash')} disabled={tab==='dash'}>Dashboard</button>
       </div>
-      {tab === 'import' ? <PdfImporter /> : <Dashboard />}
+      {tab === 'import' ? <PdfImporter /> : <DashboardAnaliticasLocalStorage />}
       <hr style={{ margin: '20px 0' }} />
       <details>
         <summary>Ayuda</summary>

@@ -1,11 +1,11 @@
 import { BiomarkerRow } from "src/types";
 
-const numberOrNull = (v: any): number | null => {
+export const numberOrNull = (v: any): number | null => {
   if (v === undefined || v === null || v === "" || Number.isNaN(Number(v))) return null
   return Number(v)
 }
 
-function normalizeReference(val: any): { low: number | null; high: number | null } {
+export function normalizeReference(val: any): { low: number | null; high: number | null } {
   // admite: "(12 - 18)", "12-18", "Inf. 5.7", "Sup. 150", "0.2 - 1.2", "< 20", ">= 30"
   if (val == null) return { low: null, high: null }
   const s = String(val).replace(/[,]/g, ".").trim()
@@ -41,7 +41,7 @@ function normalizeReference(val: any): { low: number | null; high: number | null
   return { low: null, high: null }
 }
 
-function normalizeData(data: any): BiomarkerRow[] {
+export function normalizeData(data: any): BiomarkerRow[] {
   if (!data) return []
 
   // 1) Si es ya una lista de filas compatible
@@ -62,7 +62,7 @@ function normalizeData(data: any): BiomarkerRow[] {
           refHigh = refHigh ?? high
         }
 
-        const category = row.category ?? row.categoria ?? row.group
+        const category = (row.category ?? row.categoria ?? row.group)?.toLowerCase()
         return name && value != null
           ? ({ name, value, unit, refLow: numberOrNull(refLow), refHigh: numberOrNull(refHigh), category } as BiomarkerRow)
           : null
@@ -82,7 +82,7 @@ function normalizeData(data: any): BiomarkerRow[] {
           unit: v.unit ?? v.units,
           refLow: numberOrNull(v.refLow ?? v.min ?? v.low ?? low),
           refHigh: numberOrNull(v.refHigh ?? v.max ?? v.high ?? high),
-          category: v.category ?? v.categoria,
+          category: (v.category ?? v.categoria)?.toLowerCase(),
         }
         if (!Number.isNaN(row.value)) out.push(row)
       } else {
