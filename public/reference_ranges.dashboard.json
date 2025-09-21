@@ -2658,7 +2658,7 @@
       "category": "general",
       "levels": {
         "excelente": {
-          "unisex": "25 - 50",
+          "unisex": "25 - 60",
           "male": null,
           "female": null
         },
@@ -2673,7 +2673,7 @@
           "female": null
         },
         "malo": {
-          "unisex": "<15 o >50",
+          "unisex": "<15 o >60",
           "male": null,
           "female": null
         }
