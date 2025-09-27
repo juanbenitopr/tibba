@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import PdfImporter from './components/PdfImporter'
 import DashboardAnaliticasLocalStorage from './components/DashboardWithLocal'
+import BiomarkerComparison from './components/BiomarkerComparison'
 
-type Tab = 'import' | 'dash'
+type Tab = 'import' | 'dash' | 'compare'
 
 const App: React.FC = () => {
   const [tab, setTab] = useState<Tab>('import')
@@ -13,8 +14,15 @@ const App: React.FC = () => {
       <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
         <button onClick={() => setTab('import')} disabled={tab==='import'}>Importar PDF</button>
         <button onClick={() => setTab('dash')} disabled={tab==='dash'}>Dashboard</button>
+        <button onClick={() => setTab('compare')} disabled={tab==='compare'}>Comparador</button>
       </div>
-      {tab === 'import' ? <PdfImporter /> : <DashboardAnaliticasLocalStorage />}
+      {tab === 'import' ? (
+        <PdfImporter />
+      ) : tab === 'dash' ? (
+        <DashboardAnaliticasLocalStorage />
+      ) : (
+        <BiomarkerComparison />
+      )}
       <hr style={{ margin: '20px 0' }} />
       <details>
         <summary>Ayuda</summary>

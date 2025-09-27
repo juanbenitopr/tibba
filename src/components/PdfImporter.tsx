@@ -38,14 +38,14 @@ const PdfImporter: React.FC = () => {
     for (let i = 1; i <= pdf.numPages; i++) {
       const page = await pdf.getPage(i)
       const content = await page.getTextContent()
-      const lines = {} as Record<number, Array<string>>
+      const lines = {} as Record<number, Array<any>>
       for(const item of content.items) {
         const y = Math.round((item as any).transform[5]);
         if (!lines[y]) lines[y] = [];
         const str = normalize((item as any).str || '').trim();
         if (str)lines[y].push(str);
       }
-      pageTexts.push(Object.entries(lines).sort((a,b) => a[0]-b[0]).map(e => e[1].join('||')).join('\n'))
+      pageTexts.push(Object.entries(lines).sort((a, b) => Number(a[0]) - Number(b[0])).map(e => e[1].join('||')).join('\n'))
     }
     const allText = pageTexts.join('\n')
     setStatus('Extrayendo biomarcadores…')
